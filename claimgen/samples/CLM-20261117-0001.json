@@ -1,0 +1,391 @@
+{
+  "claim_id": "CLM-20261117-0001",
+  "created_at": "2026-11-17T14:45:09.762965-06:00",
+  "status": "ready",
+  "form": "CMS-1500 (02/12)",
+  "source": {
+    "type": "billgen label",
+    "bill_id": "bill_000029",
+    "bill_date": "2026-04-18"
+  },
+  "insurance": {
+    "type": "group",
+    "member_id": "XJH442190011",
+    "plan_name": "Blue Mutual Health",
+    "group_number": "",
+    "payer_address": ""
+  },
+  "patient": {
+    "last_name": "Weeks",
+    "first_name": "Christine",
+    "middle_initial": "",
+    "dob": "1987-01-10",
+    "sex": "F",
+    "address": {
+      "line1": "627 David Locks",
+      "line2": "",
+      "city": "Port Jenniferland",
+      "state": "SD",
+      "zip": "45949"
+    },
+    "phone": "",
+    "account_number": "51291257",
+    "relationship_to_insured": "self"
+  },
+  "insured": {
+    "same_as_patient": true,
+    "last_name": "",
+    "first_name": "",
+    "middle_initial": "",
+    "dob": null,
+    "sex": null,
+    "address": {
+      "line1": "",
+      "line2": "",
+      "city": "",
+      "state": "",
+      "zip": ""
+    }
+  },
+  "diagnoses": [
+    {
+      "letter": "A",
+      "code": "M25.561"
+    }
+  ],
+  "lines": [
+    {
+      "date_from": "2026-02-02",
+      "date_to": "2026-02-02",
+      "pos": "11",
+      "emg": false,
+      "code": "73721",
+      "modifiers": [],
+      "dx_pointer": "A",
+      "charge": 1017.0,
+      "units": 1,
+      "rendering_npi": "2978207159"
+    },
+    {
+      "date_from": "2026-02-02",
+      "date_to": "2026-02-02",
+      "pos": "11",
+      "emg": false,
+      "code": "73030",
+      "modifiers": [],
+      "dx_pointer": "A",
+      "charge": 167.67,
+      "units": 1,
+      "rendering_npi": "2978207159"
+    },
+    {
+      "date_from": "2026-02-02",
+      "date_to": "2026-02-02",
+      "pos": "11",
+      "emg": false,
+      "code": "71046",
+      "modifiers": [],
+      "dx_pointer": "A",
+      "charge": 170.0,
+      "units": 1,
+      "rendering_npi": "2978207159"
+    },
+    {
+      "date_from": "2026-02-02",
+      "date_to": "2026-02-02",
+      "pos": "11",
+      "emg": false,
+      "code": "73721",
+      "modifiers": [],
+      "dx_pointer": "A",
+      "charge": 2251.0,
+      "units": 1,
+      "rendering_npi": "2978207159"
+    },
+    {
+      "date_from": "2026-02-02",
+      "date_to": "2026-02-02",
+      "pos": "11",
+      "emg": false,
+      "code": "76856",
+      "modifiers": [],
+      "dx_pointer": "A",
+      "charge": 465.0,
+      "units": 1,
+      "rendering_npi": "2978207159"
+    },
+    {
+      "date_from": "2026-02-02",
+      "date_to": "2026-02-02",
+      "pos": "11",
+      "emg": false,
+      "code": "72148",
+      "modifiers": [],
+      "dx_pointer": "A",
+      "charge": 2093.0,
+      "units": 1,
+      "rendering_npi": "2978207159"
+    }
+  ],
+  "amount_paid": 3188.88,
+  "billing_provider": {
+    "name": "Prairie Imaging Center",
+    "npi": "2978207159",
+    "tax_id": "86-5281685",
+    "phone": "(629) 555-0114",
+    "address": {
+      "line1": "925 Brandi Divide",
+      "line2": "",
+      "city": "Codyfurt",
+      "state": "MI",
+      "zip": "41163"
+    }
+  },
+  "service_facility_same": true,
+  "service_facility": {
+    "name": "",
+    "npi": "",
+    "tax_id": "",
+    "phone": "",
+    "address": {
+      "line1": "",
+      "line2": "",
+      "city": "",
+      "state": "",
+      "zip": ""
+    }
+  },
+  "complaint_category": "Knee",
+  "accept_assignment": true,
+  "signature_on_file": true,
+  "signature_date": null,
+  "field_sources": {
+    "patient.last_name": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "patient.first_name": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "patient.middle_initial": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "patient.dob": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "patient.address": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "patient.account_number": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "insurance.plan_name": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "billing_provider.name": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "billing_provider.npi": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "billing_provider.tax_id": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "billing_provider.phone": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "billing_provider.address": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[0].date_from": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[0].code": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[0].charge": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[0].units": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[0].pos": {
+      "from": "manual",
+      "reviewed": true
+    },
+    "lines[0].dx_pointer": {
+      "from": "manual",
+      "reviewed": true
+    },
+    "lines[1].date_from": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[1].code": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[1].charge": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[1].units": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[1].pos": {
+      "from": "manual",
+      "reviewed": true
+    },
+    "lines[1].dx_pointer": {
+      "from": "manual",
+      "reviewed": true
+    },
+    "lines[2].date_from": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[2].code": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[2].charge": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[2].units": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[2].pos": {
+      "from": "manual",
+      "reviewed": true
+    },
+    "lines[2].dx_pointer": {
+      "from": "manual",
+      "reviewed": true
+    },
+    "lines[3].date_from": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[3].code": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[3].charge": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[3].units": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[3].pos": {
+      "from": "manual",
+      "reviewed": true
+    },
+    "lines[3].dx_pointer": {
+      "from": "manual",
+      "reviewed": true
+    },
+    "lines[4].date_from": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[4].code": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[4].charge": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[4].units": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[4].pos": {
+      "from": "manual",
+      "reviewed": true
+    },
+    "lines[4].dx_pointer": {
+      "from": "manual",
+      "reviewed": true
+    },
+    "lines[5].date_from": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[5].code": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[5].charge": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[5].units": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "lines[5].pos": {
+      "from": "manual",
+      "reviewed": true
+    },
+    "lines[5].dx_pointer": {
+      "from": "manual",
+      "reviewed": true
+    },
+    "amount_paid": {
+      "from": "bill",
+      "confidence": 1.0
+    },
+    "patient.sex": {
+      "from": "manual",
+      "reviewed": true
+    },
+    "complaint_category": {
+      "from": "manual",
+      "reviewed": true
+    },
+    "insurance.type": {
+      "from": "manual"
+    },
+    "insurance.member_id": {
+      "from": "manual"
+    },
+    "diagnoses": {
+      "from": "manual"
+    }
+  },
+  "validation": {
+    "errors": [],
+    "warnings": [
+      {
+        "box": "24",
+        "field": "lines[3]",
+        "msg": "Line 4: same code and date as an earlier line \u2014 possible duplicate"
+      }
+    ]
+  },
+  "totals": {
+    "total_charge": 6163.67,
+    "amount_paid": 3188.88
+  }
+}

@@ -1,0 +1,103 @@
+code,description
+A09,Infectious gastroenteritis and colitis
+B34.9,Viral infection unspecified
+D64.9,Anemia unspecified
+E03.9,Hypothyroidism unspecified
+E11.9,Type 2 diabetes without complications
+E11.65,Type 2 diabetes with high blood sugar
+E55.9,Vitamin D deficiency unspecified
+E66.9,Obesity unspecified
+E78.00,High cholesterol (pure) unspecified
+E78.5,High blood fats (hyperlipidemia) unspecified
+E86.0,Dehydration
+F17.210,Nicotine dependence cigarettes
+F32.A,Depression unspecified
+F41.1,Generalized anxiety disorder
+F41.9,Anxiety disorder unspecified
+G43.909,Migraine unspecified
+G47.00,Insomnia unspecified
+G89.29,Other chronic pain
+H10.9,Pink eye (conjunctivitis) unspecified
+H66.90,Middle ear infection unspecified ear
+I10,High blood pressure (essential hypertension)
+I21.9,Heart attack (acute myocardial infarction) unspecified
+I48.91,Atrial fibrillation unspecified
+J01.90,Acute sinusitis unspecified
+J02.0,Strep throat
+J02.9,Sore throat (acute pharyngitis) unspecified
+J06.9,Upper respiratory infection unspecified
+J11.1,Flu with other respiratory symptoms
+J18.9,Pneumonia unspecified organism
+J20.9,Acute bronchitis unspecified
+J30.9,Allergic rhinitis unspecified
+J44.9,COPD unspecified
+J45.909,Asthma unspecified uncomplicated
+K02.9,Dental caries (cavities) unspecified
+K04.02,Irreversible pulpitis
+K05.10,Chronic gingivitis plaque induced
+K21.9,Acid reflux (GERD) without esophagitis
+K35.80,Acute appendicitis unspecified
+K52.9,Noninfective gastroenteritis unspecified
+K59.00,Constipation unspecified
+K80.20,Gallstone without inflammation or blockage
+L03.90,Cellulitis unspecified
+L30.9,Dermatitis unspecified
+L70.0,Acne vulgaris
+M17.11,Osteoarthritis right knee
+M17.12,Osteoarthritis left knee
+M19.90,Osteoarthritis unspecified site
+M25.511,Pain in right shoulder
+M25.512,Pain in left shoulder
+M25.561,Pain in right knee
+M25.562,Pain in left knee
+M54.16,Radiculopathy lower back
+M54.2,Neck pain (cervicalgia)
+M54.50,Low back pain unspecified
+M62.81,Muscle weakness generalized
+N20.0,Kidney stone
+N39.0,Urinary tract infection site not specified
+N40.0,Enlarged prostate without urinary symptoms
+R05.9,Cough unspecified
+R06.02,Shortness of breath
+R07.89,Other chest pain
+R07.9,Chest pain unspecified
+R10.13,Epigastric pain
+R10.31,Right lower belly pain
+R10.9,Abdominal pain unspecified
+R11.2,Nausea with vomiting
+R26.89,Other problems with walking and mobility
+R31.9,Blood in urine unspecified
+R42,Dizziness
+R50.9,Fever unspecified
+R51.9,Headache unspecified
+R53.83,Other fatigue
+R55,Fainting (syncope)
+R73.03,Prediabetes
+R91.8,Other abnormal lung finding
+S39.012A,Lower back muscle strain first visit
+S52.501A,Broken right wrist (lower radius) first visit
+S61.411A,Cut on right hand first visit
+S61.412A,Cut on left hand first visit
+S83.511A,Right knee ACL sprain first visit
+S93.401A,Right ankle sprain first visit
+S93.402A,Left ankle sprain first visit
+U07.1,COVID-19
+Z00.00,Adult checkup normal findings
+Z00.01,Adult checkup abnormal findings
+Z00.129,Child checkup normal findings
+Z01.20,Dental exam and cleaning normal findings
+Z01.21,Dental exam and cleaning abnormal findings
+Z01.419,Gynecological exam normal findings
+Z01.818,Pre-procedure exam other
+Z09,Follow-up exam after treatment
+Z11.59,Screening for other viral diseases
+Z12.11,Colon cancer screening
+Z12.31,Screening mammogram
+Z13.1,Diabetes screening
+Z13.220,Cholesterol screening
+Z20.822,Contact with or exposure to COVID-19
+Z23,Encounter for immunization
+Z47.1,Aftercare after joint replacement
+Z79.4,Long-term use of insulin
+Z79.899,Other long-term drug therapy
+Z87.891,Past nicotine dependence

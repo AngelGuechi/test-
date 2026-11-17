@@ -1,0 +1,9 @@
+# Python / local environments
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# generated data (can be large) — recreate with the scripts
+billgen/out/
+claimgen/claims/

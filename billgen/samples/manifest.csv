@@ -1,0 +1,17 @@
+id,image,label,template,provider_id,provider_name,n_items,amount_due,augmented
+bill_000001,bill_000001.png,bill_000001.json,t02_hospital,P0129,Advanced Imaging of Davidtown,3,2370.5,True
+bill_000002,bill_000002.png,bill_000002.json,t03_lab,P0148,Lakeside Dental Care,5,180.98,True
+bill_000003,bill_000003.png,bill_000003.json,t01_clinic,P0078,Huangfurt Pathology Associates,10,295.34,True
+bill_000004,bill_000004.png,bill_000004.json,t03_lab,P0033,Northfield Imaging Center,1,68.22,True
+bill_000005,bill_000005.png,bill_000005.json,t03_lab,P0016,Jessicamouth Pathology Associates,8,174.02,True
+bill_000006,bill_000006.png,bill_000006.json,t03_lab,P0095,Advanced Imaging of Rhodesside,1,82.24,False
+bill_000007,bill_000007.png,bill_000007.json,t03_lab,P0062,Stephens Family Dentistry,2,1490.0,False
+bill_000008,bill_000008.png,bill_000008.json,t01_clinic,P0133,Willow Creek General Hospital,1,71.58,True
+bill_000009,bill_000009.png,bill_000009.json,t01_clinic,P0142,Priceton Community Hospital,4,293.35,True
+bill_000010,bill_000010.png,bill_000010.json,t01_clinic,P0010,Pinecrest Dental Group,2,147.19,True
+bill_000011,bill_000011.png,bill_000011.json,t02_hospital,P0119,Williams Family Medicine,6,213.51,True
+bill_000012,bill_000012.png,bill_000012.json,t03_lab,P0138,Oakwood Rehab & Sports Therapy,6,209.28,True
+bill_000013,bill_000013.png,bill_000013.json,t02_hospital,P0073,Stonebridge Imaging Center,6,829.72,True
+bill_000014,bill_000014.png,bill_000014.json,t01_clinic,P0120,South Andrewside Express Care,4,431.25,True
+bill_000015,bill_000015.png,bill_000015.json,t02_hospital,P0018,Harbor View General Hospital,1,84.24,True
+bill_000016,bill_000016.png,bill_000016.json,t01_clinic,P0136,Matthews Clinical Lab,1,40.24,True

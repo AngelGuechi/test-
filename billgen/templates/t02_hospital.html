@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+{{ base_css }}
+:root { --accent: {{ s.accent }}; --font: {{ s.font|safe }}; --mono: {{ s.mono|safe }}; --fs: {{ s.font_size }}px; }
+.page { padding: 0 0 40px; }
+.bar { background: var(--accent); color: #fff; padding: 26px 44px; display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: center; gap: 14px; }
+.logo svg { flex: none; }
+.pname { font-size: 1.45em; font-weight: 700; }
+.bar .addr { opacity: .9; font-size: .92em; }
+.ttl { text-align: right; font-size: 1.5em; font-weight: 700; letter-spacing: 1px; }
+.ttl small { display: block; font-size: .55em; font-weight: 400; letter-spacing: 0; opacity: .9; margin-top: 4px; }
+.body { padding: 26px 44px 0; }
+.boxes { display: flex; gap: 14px; }
+.box { flex: 1; border: 1px solid #cfd4da; border-top: 4px solid var(--accent); padding: 10px 12px; }
+.box h3 { font-size: .85em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; letter-spacing: .5px; }
+.kv { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 2px; }
+.kv span:first-child { color: #555; }
+.big { font-size: 1.9em; font-weight: 700; color: var(--accent); margin: 6px 0 4px; }
+.ins { margin: 16px 0 6px; padding: 8px 12px; background: #f2f4f7; }
+.items th { text-align: left; font-size: .82em; text-transform: uppercase; color: #333; border-bottom: 2px solid var(--accent); padding: 6px 5px; }
+.items td { padding: 5px; border-bottom: 1px dotted #bbb; font-size: .95em; }
+.sum { margin-top: 14px; margin-left: auto; width: 320px; }
+.sum td { padding: 3px 6px; }
+.sum .due td { border-top: 2px solid #333; font-weight: 700; font-size: 1.12em; padding-top: 6px; }
+.msg { margin-top: 26px; font-size: .88em; color: #555; border-left: 3px solid var(--accent); padding-left: 10px; }
+.ids { margin-top: 18px; font-size: .8em; color: #777; }
+</style></head>
+<body><div class="page">
+
+<div class="bar">
+  <div class="logo">
+    <svg width="54" height="54" viewBox="0 0 54 54"><circle cx="27" cy="27" r="25" fill="#fff" opacity=".95"/><rect x="22" y="12" width="10" height="30" fill="{{ s.accent }}"/><rect x="12" y="22" width="30" height="10" fill="{{ s.accent }}"/></svg>
+    <div>
+      <div class="pname" data-field="provider.name">{{ p.name }}</div>
+      <div class="addr" data-field="provider.address">{{ astr(p.address) }}</div>
+      <div class="addr">Billing Office <span data-field="provider.phone">{{ p.phone }}</span></div>
+    </div>
+  </div>
+  <div class="ttl">{{ s.title }}<small>Statement Date: <span data-field="bill_date">{{ d(b.bill_date) }}</span></small></div>
+</div>
+
+<div class="body">
+  <div class="boxes">
+    <div class="box">
+      <h3>Patient / Guarantor</h3>
+      <div class="b" data-field="patient.name">{{ pt.name }}</div>
+      <div data-field="patient.address">{{ pt.address.line1 }}{% if pt.address.line2 %} {{ pt.address.line2 }}{% endif %}<br>{{ pt.address.city }}, {{ pt.address.state }} {{ pt.address.zip }}</div>
+      <div class="kv" style="margin-top:6px"><span>Date of Birth</span><span data-field="patient.dob">{{ d(pt.dob) }}</span></div>
+    </div>
+    <div class="box">
+      <h3>Account Summary</h3>
+      <div class="kv"><span>{{ s.id_label }}</span><b class="mono" data-field="patient.account_number">{{ pt.account_number }}</b></div>
+      <div class="kv"><span>Statement No.</span><span data-field="statement_number">{{ b.statement_number }}</span></div>
+      <div class="kv"><span>Total Charges</span><span data-field="totals.total_charges">{{ m(b.totals.total_charges) }}</span></div>
+      <div class="kv"><span>Insurance Payments</span><span data-field="totals.insurance_paid">{{ m(b.totals.insurance_paid) }}</span></div>
+      <div class="kv"><span>Adjustments</span><span data-field="totals.adjustments">{{ m(b.totals.adjustments) }}</span></div>
+    </div>
+    <div class="box" style="flex:.8">
+      <h3>Amount Due</h3>
+      <div class="big" data-field="totals.amount_due">{{ m(b.totals.amount_due) }}</div>
+      <div class="kv"><span>Please pay by</span><b data-field="due_date">{{ d(b.due_date) }}</b></div>
+    </div>
+  </div>
+
+  <div class="ins">{% if pt.insurance %}Primary Insurance: <b data-field="patient.insurance">{{ pt.insurance }}</b> — your plan has processed the charges below.{% else %}No insurance on file. Self-pay discounts have been applied where eligible.{% endif %}</div>
+
+  <table class="items">
+    <tr><th>Service Date</th><th>Code</th><th>Description</th><th class="r">Units</th><th class="r">Charges</th><th class="r">Ins. Pmt</th><th class="r">Adjust.</th><th class="r">Pt. Resp.</th></tr>
+    {% for i in b.line_items %}{% set k = loop.index0 %}
+    <tr>
+      <td class="nowrap" data-field="line_items[{{k}}].date_of_service">{{ dos(i.date_of_service) }}</td>
+      <td class="mono" data-field="line_items[{{k}}].code">{{ i.code }}</td>
+      <td data-field="line_items[{{k}}].description">{{ i.description }}</td>
+      <td class="r" data-field="line_items[{{k}}].units">{{ i.units }}</td>
+      <td class="r nowrap" data-field="line_items[{{k}}].charge">{{ m(i.charge) }}</td>
+      <td class="r nowrap" data-field="line_items[{{k}}].insurance_paid">{{ m(-i.insurance_paid) if i.insurance_paid else m(0) }}</td>
+      <td class="r nowrap" data-field="line_items[{{k}}].adjustment">{{ m(-i.adjustment) if i.adjustment else m(0) }}</td>
+      <td class="r nowrap" data-field="line_items[{{k}}].patient_owes">{{ m(i.patient_owes) }}</td>
+    </tr>{% endfor %}
+  </table>
+
+  <table class="sum">
+    <tr><td>Total Charges</td><td class="r" data-field="totals.total_charges">{{ m(b.totals.total_charges) }}</td></tr>
+    <tr><td>Insurance Payments</td><td class="r" data-field="totals.insurance_paid">{{ m(-b.totals.insurance_paid) if b.totals.insurance_paid else m(0) }}</td></tr>
+    <tr><td>Adjustments</td><td class="r" data-field="totals.adjustments">{{ m(-b.totals.adjustments) if b.totals.adjustments else m(0) }}</td></tr>
+    <tr class="due"><td>AMOUNT DUE</td><td class="r" data-field="totals.amount_due">{{ m(b.totals.amount_due) }}</td></tr>
+  </table>
+
+  <div class="msg">Payment is due by <b data-field="due_date">{{ d(b.due_date) }}</b>. Pay online, by phone at <span data-field="provider.phone">{{ p.phone }}</span>, or mail a check payable to <span data-field="provider.name">{{ p.name }}</span>. Please write your account number on your check.</div>
+  {% if s.show_npi %}<div class="ids">NPI <span data-field="provider.npi">{{ p.npi }}</span> &nbsp;·&nbsp; Tax ID <span data-field="provider.tax_id">{{ p.tax_id }}</span></div>{% endif %}
+</div>
+
+</div></body></html>

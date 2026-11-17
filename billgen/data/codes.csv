@@ -1,0 +1,85 @@
+code,code_type,provider_type,description,min_price,max_price,max_units
+99202,CPT,clinic,New patient visit - brief,85,150,1
+99203,CPT,clinic,New patient visit - standard,120,210,1
+99204,CPT,clinic,New patient visit - extended,190,320,1
+99212,CPT,clinic,Follow-up visit - brief,60,110,1
+99213,CPT,clinic,Follow-up visit - standard,90,180,1
+99214,CPT,clinic,Follow-up visit - extended,140,260,1
+99395,CPT,clinic,Annual checkup age 18-39,160,280,1
+99396,CPT,clinic,Annual checkup age 40-64,180,300,1
+90471,CPT,clinic,Vaccine administration,20,45,2
+90686,CPT,clinic,Flu vaccine,25,60,1
+36415,CPT,clinic,Blood draw,10,35,1
+93000,CPT,clinic,Heart rhythm test (ECG),40,120,1
+81002,CPT,clinic,Urine dipstick test,8,25,1
+87880,CPT,clinic,Rapid strep test,20,55,1
+96372,CPT,clinic,Injection under skin or muscle,25,70,2
+J1100,HCPCS,clinic,Dexamethasone 1 mg injection,3,20,4
+99203,CPT,urgent_care,New patient visit - standard,140,240,1
+99213,CPT,urgent_care,Follow-up visit - standard,110,200,1
+99214,CPT,urgent_care,Follow-up visit - extended,160,280,1
+S9083,HCPCS,urgent_care,Urgent care center visit fee,90,200,1
+87804,CPT,urgent_care,Rapid flu test,25,70,2
+87635,CPT,urgent_care,COVID-19 PCR test,50,150,1
+12001,CPT,urgent_care,Simple wound repair small,150,350,1
+29125,CPT,urgent_care,Forearm splint,90,200,1
+73610,CPT,urgent_care,Ankle X-ray 3 views,70,180,1
+96372,CPT,urgent_care,Injection under skin or muscle,30,80,2
+J1885,HCPCS,urgent_care,Ketorolac 15 mg injection,5,30,2
+99284,CPT,hospital,Emergency visit - moderate,450,1100,1
+99285,CPT,hospital,Emergency visit - high,800,2200,1
+99222,CPT,hospital,Hospital admission visit,250,450,1
+99232,CPT,hospital,Hospital follow-up visit,120,260,3
+99238,CPT,hospital,Discharge day management,110,220,1
+71046,CPT,hospital,Chest X-ray 2 views,90,300,1
+74177,CPT,hospital,CT abdomen and pelvis with contrast,900,3200,1
+70450,CPT,hospital,CT head without contrast,500,1800,1
+85025,CPT,hospital,Complete blood count,25,90,2
+80053,CPT,hospital,Comprehensive metabolic panel,40,160,2
+36415,CPT,hospital,Blood draw,15,45,2
+96374,CPT,hospital,IV push medication,90,260,2
+96365,CPT,hospital,IV infusion first hour,180,480,1
+J7030,HCPCS,hospital,Saline solution 1000 cc,15,90,3
+80053,CPT,lab,Comprehensive metabolic panel,20,90,1
+80061,CPT,lab,Cholesterol panel,25,95,1
+80048,CPT,lab,Basic metabolic panel,18,70,1
+85025,CPT,lab,Complete blood count,15,60,1
+83036,CPT,lab,Hemoglobin A1c,20,70,1
+84443,CPT,lab,Thyroid stimulating hormone,30,110,1
+82306,CPT,lab,Vitamin D level,45,160,1
+81001,CPT,lab,Urinalysis with microscopy,10,40,1
+87086,CPT,lab,Urine culture,20,75,1
+84153,CPT,lab,PSA total,30,110,1
+82947,CPT,lab,Glucose blood test,8,30,1
+36415,CPT,lab,Blood draw,8,30,1
+71046,CPT,imaging,Chest X-ray 2 views,70,250,1
+73030,CPT,imaging,Shoulder X-ray 2+ views,70,220,1
+72100,CPT,imaging,Lower back X-ray 2-3 views,80,260,1
+70450,CPT,imaging,CT head without contrast,400,1500,1
+74177,CPT,imaging,CT abdomen and pelvis with contrast,700,2800,1
+72148,CPT,imaging,MRI lower spine without contrast,800,2600,1
+73721,CPT,imaging,MRI knee without contrast,700,2400,1
+76700,CPT,imaging,Abdominal ultrasound complete,250,700,1
+77067,CPT,imaging,Screening mammogram both sides,180,450,1
+76856,CPT,imaging,Pelvic ultrasound,200,600,1
+D0120,CDT,dental,Routine oral exam,40,90,1
+D0150,CDT,dental,Full oral exam new patient,70,150,1
+D0274,CDT,dental,Bitewing X-rays four films,50,110,1
+D0330,CDT,dental,Panoramic X-ray,90,180,1
+D1110,CDT,dental,Adult teeth cleaning,80,160,1
+D1120,CDT,dental,Child teeth cleaning,50,110,1
+D1208,CDT,dental,Fluoride treatment,25,60,1
+D2391,CDT,dental,Tooth-colored filling one surface back tooth,120,260,3
+D2740,CDT,dental,Porcelain crown,900,1600,1
+D3330,CDT,dental,Root canal molar,900,1700,1
+D7140,CDT,dental,Simple tooth extraction,120,300,2
+D4341,CDT,dental,Deep cleaning per quadrant,180,350,4
+97161,CPT,pt,Physical therapy evaluation - low,90,180,1
+97162,CPT,pt,Physical therapy evaluation - moderate,110,220,1
+97110,CPT,pt,Therapeutic exercise per 15 min,35,80,4
+97140,CPT,pt,Hands-on manual therapy per 15 min,35,85,3
+97112,CPT,pt,Balance and coordination training per 15 min,35,85,3
+97530,CPT,pt,Functional activities per 15 min,40,90,3
+97010,CPT,pt,Hot or cold packs,10,30,1
+97014,CPT,pt,Electrical stimulation unattended,20,50,1
+97035,CPT,pt,Ultrasound therapy per 15 min,25,60,2

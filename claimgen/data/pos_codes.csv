@@ -1,0 +1,17 @@
+code,description
+02,Telehealth (not in patient's home)
+10,Telehealth in patient's home
+11,Office
+12,Home
+19,Off-campus outpatient hospital
+20,Urgent care facility
+21,Inpatient hospital
+22,On-campus outpatient hospital
+23,Emergency room - hospital
+24,Ambulatory surgical center
+31,Skilled nursing facility
+32,Nursing facility
+49,Independent clinic
+50,Federally qualified health center
+81,Independent laboratory
+99,Other place of service

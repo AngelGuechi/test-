@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+{{ base_css }}
+:root { --accent: {{ s.accent }}; --font: {{ s.font|safe }}; --mono: {{ s.mono|safe }}; --fs: {{ s.font_size - 1 }}px; }
+.page { padding: 34px 44px; }
+.stub { display: flex; justify-content: space-between; gap: 20px; }
+.from .pn { font-weight: 700; font-size: 1.25em; color: var(--accent); }
+.st { border: 1.5px solid #333; width: 330px; }
+.st td { border: 1px solid #999; padding: 4px 7px; font-size: .92em; }
+.st td:first-child { background: #eee; font-weight: 700; width: 46%; }
+.mail { margin: 26px 0 0 44px; text-transform: uppercase; line-height: 1.45; }
+.payto { margin: -64px 0 0 auto; width: 300px; font-size: .9em; }
+.payto .t { font-size: .8em; color: #555; }
+.cut { margin: 26px -44px 18px; border-top: 2px dashed #777; text-align: center; font-size: .78em; color: #555; padding-top: 3px; }
+.hdr { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid var(--accent); padding-bottom: 6px; }
+.hdr .ttl { font-size: 1.35em; font-weight: 700; color: var(--accent); text-transform: uppercase; }
+.info { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px 18px; margin: 10px 0 12px; font-size: .92em; }
+.info span { color: #666; }
+.items th { background: #e8e8e8; border: 1px solid #aaa; font-size: .8em; padding: 4px; text-transform: uppercase; }
+.items td { border: 1px solid #ccc; padding: 3px 5px; font-size: .9em; }
+.tot { margin: 10px 0 0 auto; width: 300px; border: 1.5px solid #333; }
+.tot td { padding: 3px 8px; }
+.tot .due td { background: var(--accent); color: #fff; font-weight: 700; }
+.note { margin-top: 18px; font-size: .82em; color: #555; }
+</style></head>
+<body><div class="page">
+
+<!-- remittance stub -->
+<div class="stub">
+  <div class="from">
+    <div class="pn" data-field="provider.name">{{ p.name }}</div>
+    <div data-field="provider.address">{{ p.address.line1 }}{% if p.address.line2 %}, {{ p.address.line2 }}{% endif %}<br>{{ p.address.city }}, {{ p.address.state }} {{ p.address.zip }}</div>
+    <div>Phone <span data-field="provider.phone">{{ p.phone }}</span></div>
+  </div>
+  <table class="st">
+    <tr><td>{{ s.id_label }}</td><td class="mono" data-field="patient.account_number">{{ pt.account_number }}</td></tr>
+    <tr><td>Statement Date</td><td data-field="bill_date">{{ d(b.bill_date) }}</td></tr>
+    <tr><td>Payment Due</td><td data-field="due_date">{{ d(b.due_date) }}</td></tr>
+    <tr><td>Amount Due</td><td class="b" data-field="totals.amount_due">{{ m(b.totals.amount_due) }}</td></tr>
+    <tr><td>Amount Enclosed</td><td>$ ____________</td></tr>
+  </table>
+</div>
+<div class="mail">
+  <div data-field="patient.name">{{ pt.name }}</div>
+  <div data-field="patient.address">{{ pt.address.line1 }}{% if pt.address.line2 %} {{ pt.address.line2 }}{% endif %}<br>{{ pt.address.city }}, {{ pt.address.state }} {{ pt.address.zip }}</div>
+</div>
+<div class="payto">
+  <div class="t">MAKE CHECKS PAYABLE TO:</div>
+  <div class="b" data-field="provider.name">{{ p.name }}</div>
+  <div>PO Box {{ p.npi[-4:] }}<br>{{ p.address.city }}, {{ p.address.state }} {{ p.address.zip }}</div>
+</div>
+
+<div class="cut">✂ &nbsp; PLEASE DETACH AND RETURN THE TOP PORTION WITH YOUR PAYMENT &nbsp; ✂</div>
+
+<!-- detail -->
+<div class="hdr">
+  <div class="ttl">{{ s.title }}</div>
+  <div class="muted">Statement <span data-field="statement_number">{{ b.statement_number }}</span></div>
+</div>
+<div class="info">
+  <div><span>Patient:</span> <b data-field="patient.name">{{ pt.name }}</b></div>
+  <div><span>DOB:</span> <span data-field="patient.dob">{{ d(pt.dob) }}</span></div>
+  <div><span>{{ s.id_label }}:</span> <b class="mono" data-field="patient.account_number">{{ pt.account_number }}</b></div>
+  <div><span>Insurance:</span> {% if pt.insurance %}<span data-field="patient.insurance">{{ pt.insurance }}</span>{% else %}Self-pay{% endif %}</div>
+  {% if s.show_npi %}<div><span>Provider NPI:</span> <span data-field="provider.npi">{{ p.npi }}</span></div>
+  <div><span>Tax ID:</span> <span data-field="provider.tax_id">{{ p.tax_id }}</span></div>{% endif %}
+</div>
+
+<table class="items">
+  <tr><th>DOS</th><th>Code</th><th>Description</th><th>Qty</th><th>Charge</th><th>Ins Paid</th><th>Adj</th><th>Balance</th></tr>
+  {% for i in b.line_items %}{% set k = loop.index0 %}
+  <tr>
+    <td class="nowrap" data-field="line_items[{{k}}].date_of_service">{{ dos(i.date_of_service) }}</td>
+    <td class="mono" data-field="line_items[{{k}}].code">{{ i.code }}</td>
+    <td data-field="line_items[{{k}}].description">{{ i.description|upper }}</td>
+    <td class="c" data-field="line_items[{{k}}].units">{{ i.units }}</td>
+    <td class="r nowrap" data-field="line_items[{{k}}].charge">{{ m(i.charge) }}</td>
+    <td class="r nowrap" data-field="line_items[{{k}}].insurance_paid">{{ m(i.insurance_paid) }}</td>
+    <td class="r nowrap" data-field="line_items[{{k}}].adjustment">{{ m(i.adjustment) }}</td>
+    <td class="r nowrap" data-field="line_items[{{k}}].patient_owes">{{ m(i.patient_owes) }}</td>
+  </tr>{% endfor %}
+</table>
+
+<table class="tot">
+  <tr><td>Total Charges</td><td class="r" data-field="totals.total_charges">{{ m(b.totals.total_charges) }}</td></tr>
+  <tr><td>Insurance Paid</td><td class="r" data-field="totals.insurance_paid">{{ m(b.totals.insurance_paid) }}</td></tr>
+  <tr><td>Adjustments</td><td class="r" data-field="totals.adjustments">{{ m(b.totals.adjustments) }}</td></tr>
+  <tr class="due"><td>PLEASE PAY</td><td class="r" data-field="totals.amount_due">{{ m(b.totals.amount_due) }}</td></tr>
+</table>
+
+<div class="note">This statement reflects services through <b data-field="bill_date">{{ d(b.bill_date) }}</b>. Balances not paid by the due date may be subject to collection. Questions about this bill? Call <span data-field="provider.phone">{{ p.phone }}</span>.</div>
+
+</div></body></html>

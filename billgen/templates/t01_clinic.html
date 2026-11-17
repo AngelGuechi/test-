@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+{{ base_css }}
+:root { --accent: {{ s.accent }}; --font: {{ s.font|safe }}; --mono: {{ s.mono|safe }}; --fs: {{ s.font_size }}px; }
+.page { padding: 36px; }
+.frame { border: 9px solid var(--accent); min-height: 984px; padding: 34px 30px 30px; display: flex; flex-direction: column; }
+.top { display: flex; justify-content: space-between; align-items: flex-start; }
+.prov-name { font-size: 1.35em; font-weight: 700; color: var(--accent); margin-bottom: 6px; }
+.prov div, .billto div { color: #555; }
+h1 { font-size: 2.1em; letter-spacing: .5px; color: var(--accent); text-align: right; margin-bottom: 22px; }
+.meta { text-align: right; font-weight: 700; }
+.meta div { margin-bottom: 3px; }
+.billto { margin-top: 26px; display: flex; justify-content: space-between; }
+.lbl { color: var(--accent); font-weight: 700; margin-bottom: 4px; }
+.items { margin-top: 26px; }
+.items th { background: var(--accent); color: #fff; font-weight: 600; padding: 7px 6px; font-size: .9em; }
+.items td { padding: 6px; border-bottom: 1px solid #e3e3e3; vertical-align: top; }
+.items tr:nth-child(even) td { background: #f3f4f6; }
+.tot { margin-top: 18px; display: flex; justify-content: flex-end; }
+.tot table { width: 330px; }
+.tot td { padding: 3px 8px; font-weight: 700; }
+.due td { background: var(--accent); color: #fff; padding: 10px 8px; font-size: 1.15em; }
+.foot { margin-top: auto; padding-top: 30px; text-align: center; color: #666; }
+</style></head>
+<body><div class="page"><div class="frame">
+
+<div class="top">
+  <div class="prov">
+    <div class="prov-name" data-field="provider.name">{{ p.name }}</div>
+    <div data-field="provider.address">{{ p.address.line1 }}{% if p.address.line2 %}, {{ p.address.line2 }}{% endif %}<br>{{ p.address.city }}, {{ p.address.state }} {{ p.address.zip }}</div>
+    <div data-field="provider.phone">{{ p.phone }}</div>
+    {% if s.show_npi %}<div>NPI: <span data-field="provider.npi">{{ p.npi }}</span></div>{% endif %}
+  </div>
+  <div>
+    <h1>{{ s.title }}</h1>
+    <div class="meta">
+      <div>Statement #: <span data-field="statement_number">{{ b.statement_number }}</span></div>
+      <div>Date: <span data-field="bill_date">{{ d(b.bill_date) }}</span></div>
+      <div>Due Date: <span data-field="due_date">{{ d(b.due_date) }}</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="billto">
+  <div>
+    <div class="lbl">BILL TO:</div>
+    <div data-field="patient.name">{{ pt.name }}</div>
+    <div data-field="patient.address">{{ pt.address.line1 }}{% if pt.address.line2 %} {{ pt.address.line2 }}{% endif %}<br>{{ pt.address.city }}, {{ pt.address.state }} {{ pt.address.zip }}</div>
+  </div>
+  <div class="r">
+    <div><span class="lbl">{{ s.id_label }}:</span> <b data-field="patient.account_number">{{ pt.account_number }}</b></div>
+    <div><span class="lbl">DOB:</span> <span data-field="patient.dob">{{ d(pt.dob) }}</span></div>
+    {% if pt.insurance %}<div><span class="lbl">Insurance:</span> <span data-field="patient.insurance">{{ pt.insurance }}</span></div>{% endif %}
+  </div>
+</div>
+
+<table class="items">
+  <tr><th>DATE</th><th>CODE</th><th style="text-align:left">DESCRIPTION</th><th>QTY</th><th class="r">CHARGE</th><th class="r">INS PAID</th><th class="r">ADJ</th><th class="r">BALANCE</th></tr>
+  {% for i in b.line_items %}{% set k = loop.index0 %}
+  <tr>
+    <td class="nowrap" data-field="line_items[{{k}}].date_of_service">{{ dos(i.date_of_service) }}</td>
+    <td class="c" data-field="line_items[{{k}}].code">{{ i.code }}</td>
+    <td data-field="line_items[{{k}}].description">{{ i.description }}</td>
+    <td class="c" data-field="line_items[{{k}}].units">{{ i.units }}</td>
+    <td class="r nowrap" data-field="line_items[{{k}}].charge">{{ m(i.charge) }}</td>
+    <td class="r nowrap" data-field="line_items[{{k}}].insurance_paid">{{ m(i.insurance_paid) }}</td>
+    <td class="r nowrap" data-field="line_items[{{k}}].adjustment">{{ m(i.adjustment) }}</td>
+    <td class="r nowrap" data-field="line_items[{{k}}].patient_owes">{{ m(i.patient_owes) }}</td>
+  </tr>{% endfor %}
+</table>
+
+<div class="tot"><table>
+  <tr><td class="r">Total Charges</td><td class="r" data-field="totals.total_charges">{{ m(b.totals.total_charges) }}</td></tr>
+  <tr><td class="r">Insurance Paid</td><td class="r" data-field="totals.insurance_paid">{{ m(b.totals.insurance_paid) }}</td></tr>
+  <tr><td class="r">Adjustments</td><td class="r" data-field="totals.adjustments">{{ m(b.totals.adjustments) }}</td></tr>
+  <tr class="due"><td class="c">BALANCE DUE</td><td class="r" data-field="totals.amount_due">{{ m(b.totals.amount_due) }}</td></tr>
+</table></div>
+
+<div class="foot">Thank you for choosing <span data-field="provider.name">{{ p.name }}</span>.<br>Please pay by the due date. Questions? Call <span data-field="provider.phone">{{ p.phone }}</span>.</div>
+
+</div></div></body></html>

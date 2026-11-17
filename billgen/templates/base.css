@@ -1,0 +1,12 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #fff; }
+body { width: 816px; min-height: 1056px; color: #222; font-family: var(--font); font-size: var(--fs); line-height: 1.35; }
+.page { width: 816px; min-height: 1056px; padding: 48px 52px; position: relative; }
+table { border-collapse: collapse; width: 100%; }
+.r { text-align: right; }
+.c { text-align: center; }
+.muted { color: #666; }
+.b { font-weight: 700; }
+.accent { color: var(--accent); }
+.mono { font-family: var(--mono); }
+.nowrap { white-space: nowrap; }

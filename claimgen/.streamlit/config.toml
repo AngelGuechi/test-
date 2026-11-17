@@ -1,0 +1,20 @@
+[theme]
+base = "light"
+primaryColor = "#1F5FBF"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F6F8FB"
+textColor = "#0F2747"
+linkColor = "#1F5FBF"
+borderColor = "#D5DEEA"
+showWidgetBorder = true
+baseRadius = "small"
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap, 'Segoe UI', Arial, sans-serif"
+headingFontWeights = [700, 650, 600, 600, 600, 600]
+baseFontSize = 15
+
+[client]
+toolbarMode = "minimal"
+showSidebarNavigation = false
+
+[browser]
+gatherUsageStats = false

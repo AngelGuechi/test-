@@ -1,0 +1,74 @@
+code,category,implied_dx,suggested_dx
+99202,General visit,,J06.9 I10 E11.9 R51.9 M54.50
+99203,General visit,,J06.9 I10 E11.9 R51.9 M54.50
+99204,General visit,,J06.9 I10 E11.9 R51.9 M54.50
+99212,General visit,,J06.9 I10 E11.9 R51.9 M54.50
+99213,General visit,,J06.9 I10 E11.9 R51.9 M54.50
+99214,General visit,,J06.9 I10 E11.9 R51.9 M54.50
+S9083,General visit,,J06.9 J02.9 R50.9 S93.401A
+99395,Preventive checkup,Z00.00,Z00.00 Z00.01
+99396,Preventive checkup,Z00.00,Z00.00 Z00.01
+90471,Vaccination,Z23,Z23
+90686,Vaccination,Z23,Z23
+77067,Screening,Z12.31,Z12.31
+36415,Lab work,,Z00.00 Z13.220 Z13.1
+80048,Lab work,,Z00.00 E11.9 E86.0
+80053,Lab work,,Z00.00 E11.9 I10
+80061,Lab work,,Z13.220 E78.5 E78.00
+81001,Lab work,,N39.0 R31.9
+81002,Lab work,,N39.0 R31.9
+82306,Lab work,,E55.9
+82947,Lab work,,Z13.1 R73.03 E11.9
+83036,Lab work,,Z13.1 R73.03 E11.9 E11.65
+84153,Lab work,,N40.0
+84443,Lab work,,E03.9 R53.83
+85025,Lab work,,D64.9 R53.83 Z00.00
+87086,Lab work,,N39.0
+87635,Respiratory infection,,Z20.822 U07.1 R05.9 R50.9
+87804,Respiratory infection,,J11.1 R50.9 R05.9
+87880,Respiratory infection,,J02.9 J02.0
+93000,Heart,,R07.9 I10 I48.91 R55
+71046,Chest / lungs,,R05.9 R06.02 J18.9 R07.9
+70450,Head,,R51.9 R42 R55
+72100,Back / spine,,M54.50 M54.16 S39.012A
+72148,Back / spine,,M54.50 M54.16
+73030,Shoulder,,M25.511 M25.512
+73610,Ankle injury,,S93.401A S93.402A
+73721,Knee,,M25.561 M25.562 M17.11 M17.12 S83.511A
+74177,Abdomen,,R10.9 R10.31 K35.80 N20.0
+76700,Abdomen,,R10.9 K80.20 R10.13
+76856,Abdomen,,R10.9
+12001,Injury / wound,,S61.411A S61.412A
+29125,Injury / wound,,S52.501A
+96372,Medication / injection,,
+J1100,Medication / injection,,
+J1885,Medication / injection,,
+96365,IV therapy,,E86.0 A09
+96374,IV therapy,,E86.0 R11.2
+J7030,IV therapy,,E86.0
+99284,Emergency,,R07.9 R10.9 R55 R06.02
+99285,Emergency,,R07.9 I21.9 R55 R06.02
+99222,Hospital stay,,J18.9 I48.91 E86.0
+99232,Hospital stay,,J18.9 I48.91 E86.0
+99238,Hospital stay,,J18.9 I48.91
+97161,Physical therapy,,M54.50 M25.561 M62.81 R26.89
+97162,Physical therapy,,M54.50 M25.561 M62.81 R26.89 Z47.1
+97110,Physical therapy,,M54.50 M25.561 M62.81
+97112,Physical therapy,,R26.89 M62.81
+97140,Physical therapy,,M54.50 M54.2
+97530,Physical therapy,,M62.81 R26.89
+97010,Physical therapy,,M54.50
+97014,Physical therapy,,M54.50
+97035,Physical therapy,,M54.50 M25.511
+D0120,Dental,Z01.20,Z01.20 Z01.21
+D0150,Dental,Z01.20,Z01.20 Z01.21
+D0274,Dental,Z01.20,Z01.20 K02.9
+D0330,Dental,Z01.20,Z01.20 K02.9
+D1110,Dental,Z01.20,Z01.20
+D1120,Dental,Z01.20,Z01.20
+D1208,Dental,Z01.20,Z01.20
+D2391,Dental,K02.9,K02.9
+D2740,Dental,,K02.9 K04.02
+D3330,Dental,,K04.02 K02.9
+D4341,Dental,,K05.10
+D7140,Dental,,K02.9 K04.02
